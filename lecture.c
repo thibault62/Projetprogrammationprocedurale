@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
         // Boucle de lecture des caractères un à un
 
         do
+		
 
         {
 
@@ -48,3 +49,4 @@ compt++;
     return 0;
 
 }
+//http://www.linuxfocus.org/Francais/May2004/article335.shtml
