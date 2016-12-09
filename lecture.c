@@ -2,11 +2,17 @@
 #include <stdlib.h>
 #include <time.h>//utile pour la creation d'un nombre aleatoire
 
+/*fonction qui permet de creer le random en fonction des resultats precedents*/
+	int Random (int _imin, int _imax)
+	{
+	return (_imin + (rand () % (_imax-_imin+1)));
+	}
+
 int main(int argc, char *argv[])
 
 {
 system("clear");
-    file* fichier = null;
+    FILE* fichier = NULL;
 
     int caractereactuel = 0;//creation de notre caractere actuel
     int nbrAlea;//nombre aleatoire
@@ -20,7 +26,7 @@ system("clear");
 	
 /*switch qui permet d'ouvrir une image en fonction d'un nombre aleatoire entre 1 et 5 */
 	switch(nbrAlea)
-case 1:
+{case 1:
 fichier = fopen("image1", "r");
 break;
 case 2:
@@ -35,9 +41,11 @@ break;
 case 5:
 fichier = fopen("image5", "r");
 break;
+default:
+break;
+}
 
-
-    if (fichier != null)//
+    if (fichier != NULL)//
 
     {
 
@@ -85,13 +93,11 @@ break;
     }
 
  
-while(1);//attente pour eviter de montrer le prompt 
+//while(1);//attente pour eviter de montrer le prompt 
 
     return 0;
 
 }
-	/*fonction qui permet de creer le random en fonction des resultats precedents*/
-	int random (int _imin, int _imax)
-	{
-	return (_imin + (rand () % (_imax-_imin+1)));
-	}
+	
+
+   
