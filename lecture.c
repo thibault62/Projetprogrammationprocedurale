@@ -47,21 +47,7 @@ default:
 	lineCounter++;
 break;
 }
-/*
-	if (caractereActuel == 49)//reconnaissance et remplacement de 1 en bloc noir
-	{printf("%c",254);}
 
-
-	if (caractereActuel == 48)//reconnaissance et remplacement de 0 en espace
-	{printf("%c",240);}
-
-	compt++;
-
-	if (compt == 5) {
-		printf("\n");
-		compt =0;
-		lineCounter++;
-	}*/
 	
 
 
