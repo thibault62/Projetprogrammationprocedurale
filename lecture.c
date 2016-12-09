@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     int caractereActuel = 0;
     int compt = 0;
-    int compteurglobal = 0;
+    int lineCounter = 0;
 
  
 
@@ -31,22 +31,41 @@ int main(int argc, char *argv[])
             caractereActuel = fgetc(fichier); // On lit le caractre
 
            // printf("%c", caractereActuel); // On l'affiche
-compteurglobal++;
-printf("%d",compt);
+	
+	//printf("%d",compt);
 
-if (caractereActuel == 49)//reconnaissance et remplacement de 1 en bloc noir
-{/*printf("%c",254);
-printf("*");printf("%d",compt);*/}
+	switch(caractereActuel)
+{
+case 49: 
+	printf("%c",254);
+break;
+case 48:
+	printf("%c",240);
+break;
+default:
+	printf("\n");
+	lineCounter++;
+break;
+}
+/*
+	if (caractereActuel == 49)//reconnaissance et remplacement de 1 en bloc noir
+	{printf("%c",254);}
 
 
-/*if (caractereActuel == 48)//reconnaissance et remplacement de 0 en espace
-{printf("%c",240);}*/
+	if (caractereActuel == 48)//reconnaissance et remplacement de 0 en espace
+	{printf("%c",240);}
 
-compt++;
-if (compt == 4){printf("\n");
-compt =0;}
+	compt++;
 
-        } while (compteurglobal != 16); // On continue tant que fgetc n'a pas retourn EOF (fin de fichier)
+	if (compt == 5) {
+		printf("\n");
+		compt =0;
+		lineCounter++;
+	}*/
+	
+
+
+        } while (lineCounter < 4 ); // On continue tant que compteurglobal n'a pas finis le fichier
 
  
 
