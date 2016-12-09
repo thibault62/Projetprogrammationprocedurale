@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 
     int caractereActuel = 0;
     int compt = 0;
+    int compteurglobal = 0;
 
  
 
@@ -20,23 +21,32 @@ int main(int argc, char *argv[])
 
     {
 
-        // Boucle de lecture des caractères un à un
+        // Boucle de lecture des caractres un  un
 
         do
 		
 
         {
 
-            caractereActuel = fgetc(fichier); // On lit le caractère
+            caractereActuel = fgetc(fichier); // On lit le caractre
 
-            //printf("%c", caractereActuel); // On l'affiche
-	if (caractereActuel == 48)
-{
-printf("*");
+           // printf("%c", caractereActuel); // On l'affiche
+compteurglobal++;
+printf("%d",compt);
+
+if (caractereActuel == 49)//reconnaissance et remplacement de 1 en bloc noir
+{/*printf("%c",254);
+printf("*");printf("%d",compt);*/}
+
+
+/*if (caractereActuel == 48)//reconnaissance et remplacement de 0 en espace
+{printf("%c",240);}*/
+
 compt++;
-}
+if (compt == 4){printf("\n");
+compt =0;}
 
-        } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF (fin de fichier)
+        } while (compteurglobal != 16); // On continue tant que fgetc n'a pas retourn EOF (fin de fichier)
 
  
 
@@ -49,4 +59,3 @@ compt++;
     return 0;
 
 }
-//http://www.linuxfocus.org/Francais/May2004/article335.shtml
