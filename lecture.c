@@ -8,19 +8,36 @@ int main(int argc, char *argv[])
 system("clear");
     file* fichier = null;
 
-    int caractereactuel = 0;
-    int nbrAlea;
-    int linecounter = 0;
+    int caractereactuel = 0;//creation de notre caractere actuel
+    int nbrAlea;//nombre aleatoire
+    int linecounter = 0;//compteur de ligne
 
  
-	srand (time (NULL));//créer nbr alea entre 1 et 5 pour choisir entre les differentes images
+	srand (time (NULL));//créer nbr alea entre 1 et 5 pour choisir entre les 		differentes images
 	nbrAlea = Random (1,5);
-	printf ("Random : %d", nbrAlea);
-	fichier = fopen("image2", "r");
+	
 
- 
+	
+/*switch qui permet d'ouvrir une image en fonction d'un nombre aleatoire entre 1 et 5 */
+	switch(nbrAlea)
+case 1:
+fichier = fopen("image1", "r");
+break;
+case 2:
+fichier = fopen("image2", "r");
+break;
+case 3:
+fichier = fopen("image3", "r");
+break; 
+case 4:
+fichier = fopen("image4", "r");
+break;
+case 5:
+fichier = fopen("image5", "r");
+break;
 
-    if (fichier != null)
+
+    if (fichier != null)//
 
     {
 
