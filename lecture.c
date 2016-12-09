@@ -30,9 +30,7 @@ int main(int argc, char *argv[])
 
             caractereActuel = fgetc(fichier); // On lit le caractre
 
-           // printf("%c", caractereActuel); // On l'affiche
-	
-	//printf("%d",compt); 
+          
 
 	switch(caractereActuel)
 {
