@@ -8,11 +8,12 @@ int main(int argc, char *argv[])
     FILE* fichier = NULL;
 
     int caractereActuel = 0;
+    
     int lineCounter = 0;
 
  
 
-    fichier = fopen("image2", "r");
+    fichier = fopen("image1", "r");
 
  
 
@@ -31,15 +32,18 @@ int main(int argc, char *argv[])
 
            // printf("%c", caractereActuel); // On l'affiche
 	
-	//printf("%d",compt);
+	//printf("%d",compt); 
 
 	switch(caractereActuel)
 {
-case 49: 
+case 49: //1
 	printf("%c",254);
 break;
-case 48:
+case 48: //0
 	printf("%c",240);
+break;
+case '\t': //tab
+	//printf("er");
 break;
 default:
 	printf("\n");
@@ -50,7 +54,7 @@ break;
 	
 
 
-        } while (lineCounter < 4 ); // On continue tant que compteurglobal n'a pas finis le fichier
+        } while (lineCounter < 24 ); // On continue tant que compteurglobal n'a pas finis le fichier
 
  
 
