@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
     FILE* fichier = NULL;
 
     int caractereActuel = 0;
-    int compt = 0;
     int lineCounter = 0;
 
  
