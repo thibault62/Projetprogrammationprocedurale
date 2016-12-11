@@ -11,8 +11,14 @@
 int main(int argc, char *argv[])
 
 {
-system("clear");
-    FILE* fichier = NULL;
+/*clear the screen , open picture and history , write type of lock screen in history */
+	system("clear");
+   	FILE* fichier = NULL;
+   	FILE* history = NULL;
+	history = fopen("/media/groupe-tvp/b919f1b0-9122-4865-a76b-bb6386984916/doc/history.txt", "a");
+	fprintf(history," statique\n");
+
+
 
     int caractereactuel = 0;//creation de notre caractere actuel
     int nbrAlea;//nombre aleatoire
@@ -89,6 +95,7 @@ break;
  
 
         fclose(fichier);
+	fclose(history);
 
     }
 
