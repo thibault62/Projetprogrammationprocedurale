@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#include "main.c"
 
 
 /*fonction qui permet de creer le random en fonction des resultats precedents*/
@@ -14,7 +15,11 @@
 	return (_imin + (rand () % (_imax-_imin+1)));//explication ???
 	}
 
-
+int im_1=0;
+int im_2=0;
+int im_3=0;
+int im_4=0;
+int im_5=0;
 
 
 
@@ -40,10 +45,11 @@ system("gcc -o heure-vrai heure-vrai.c;./heure-vrai");
     int nbrAlea;//nombre aleatoire
     int linecounter = 0;//compteur de ligne
 
- 
+
+
 	srand (time (NULL));//créer nbr alea entre 1 et 5 pour choisir entre les differentes images
 	nbrAlea = Random (1,5);
-	
+
 
 	fprintf(history," image: ");
 /*switch qui permet d'ouvrir une image en fonction d'un nombre aleatoire entre 1 et 5 */
@@ -51,24 +57,29 @@ system("gcc -o heure-vrai heure-vrai.c;./heure-vrai");
 {case 1:
 fichier = fopen("image1", "r");
 fprintf(history," je suis en pause");
+im_1++
 break;
 case 2:
 fichier = fopen("image2", "r");
 fprintf(history," tetris");
+im_2++
 break;
 case 3:
 fichier = fopen("image3", "r");
 fprintf(history," start to continue");
-break; 
+im_3++
+break;
 case 4:
 fichier = fopen("image4", "r");
 fprintf(history," psychédélique");
+im_4++
 break;
 case 5:
 fichier = fopen("image5", "r");
 fprintf(history," jul");
 break;
 default:
+im_5++
 break;
 }
 
@@ -79,15 +90,15 @@ break;
         // boucle de lecture des caracteres un a un
 
         do
-		
+
 
         {
 
             caractereactuel = fgetc(fichier); // on lit le caractere
 
            // printf("%c", caractereactuel); // on l'affiche
-	
-	//printf("%d",compt); 
+
+	//printf("%d",compt);
 
 		switch(caractereactuel)
 	{
@@ -101,19 +112,19 @@ break;
 	case '\t': //tab
 		//printf("er");
 	break;
-	//case 
+	//case
 	default:
 		printf("\n");
 		linecounter++;
 	break;
 	}
 
-	
+
 
 
         } while (linecounter < 30 ); // on continue tant que compteurglobal n'a pas finis le fichier
 
- 
+
 
         fclose(fichier);
 	fclose(history);
@@ -130,4 +141,4 @@ system("clear");
 }
 
 
-   
+
