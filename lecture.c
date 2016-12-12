@@ -9,44 +9,10 @@
 
 
 /*fonction qui permet de creer le random en fonction des resultats precedents*/
-	int Random (int _imin, int _imax)a
+	int Random (int _imin, int _imax)
 	{
 	return (_imin + (rand () % (_imax-_imin+1)));//explication ???
 	}
-
-/*touche*/
-//----------------------------------------------------------------------------------------------------------------------------------------------
-int kbhit(void)
-{
-  struct termios oldt, newt;
-  int ch;
-  int oldf;
- 
-  tcgetattr(STDIN_FILENO, &oldt);
-  newt = oldt;
-  newt.c_lflag &= ~(ICANON | ECHO);
-  tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-  oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-  fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
- 
-  ch = getchar();
- 
-  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-  fcntl(STDIN_FILENO, F_SETFL, oldf);
- 
-  if(ch != EOF)
-  {
-    ungetc(ch, stdin);
-    return 1;
-  }
- 
-  return 0;
-}
-	
-
-
-
-//----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -60,6 +26,7 @@ int kbhit(void)
 int main(int argc, char *argv[])
 
 {
+system("gcc -o heure-vrai heure-vrai.c;./heure-vrai");
 /*clear the screen , open picture and history , write type of lock screen in history */
 	system("clear");
    	FILE* fichier = NULL;
@@ -153,10 +120,11 @@ break;
 
     }
 
-/*
-while(!kbhit())
- printf("");
-*/
+system("stty cbreak -echo");
+getchar();
+system("stty cooked -echo");
+system("clear");
+
     return 0;
 
 }
