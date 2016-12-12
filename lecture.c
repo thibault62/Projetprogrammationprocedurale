@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>//utile pour la creation d'un nombre aleatoire
+
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
 
 
+
 /*fonction qui permet de creer le random en fonction des resultats precedents*/
-	int Random (int _imin, int _imax)
+	int Random (int _imin, int _imax)a
 	{
-	return (_imin + (rand () % (_imax-_imin+1)));
+	return (_imin + (rand () % (_imax-_imin+1)));//explication ???
 	}
 
 /*touche*/
+//----------------------------------------------------------------------------------------------------------------------------------------------
 int kbhit(void)
 {
   struct termios oldt, newt;
@@ -43,7 +46,7 @@ int kbhit(void)
 
 
 
-
+//----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -71,7 +74,7 @@ int main(int argc, char *argv[])
     int linecounter = 0;//compteur de ligne
 
  
-	srand (time (NULL));//créer nbr alea entre 1 et 5 pour choisir entre les 		differentes images
+	srand (time (NULL));//créer nbr alea entre 1 et 5 pour choisir entre les differentes images
 	nbrAlea = Random (1,5);
 	
 
@@ -106,14 +109,14 @@ break;
 
     {
 
-        // boucle de lecture des caractres un  un
+        // boucle de lecture des caracteres un a un
 
         do
 		
 
         {
 
-            caractereactuel = fgetc(fichier); // on lit le caractre
+            caractereactuel = fgetc(fichier); // on lit le caractere
 
            // printf("%c", caractereactuel); // on l'affiche
 	
@@ -150,10 +153,10 @@ break;
 
     }
 
- 
+/*
 while(!kbhit())
  printf("");
-
+*/
     return 0;
 
 }
