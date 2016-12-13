@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main()
+
+{
+    int h=0;
+    int m=0;
+    int s=0;
+
+while(1)
+    {
+    time_t secondes;
+
+    struct tm instant;
+
+
+    time(&secondes);
+
+    instant=*localtime(&secondes);
+        h==instant.tm_hour;
+        m==instant.tm_min;
+        s==instant.tm_sec;
+        if (instant.tm_hour>12)
+        {
+        printf("c'est l'apres midi \n");
+        }
+        if (instant.tm_hour<12)
+        {
+        printf("c'est le matin \n");
+        }
+        if (instant.tm_min>38)
+        {
+        printf("deuxieme moitié de minute \n");
+        }
+        if (instant.tm_min<38)
+        {
+        printf("première moitié de minute \n");
+        }
+        if (instant.tm_sec>30)
+        {
+        printf("deiuxieme moitié de minute \n");
+        }
+        if (instant.tm_sec<30)
+        {
+        printf("première moitié de seconde \n");
+        }
+
+
+    printf("%d:%d:%d\n", instant.tm_hour, instant.tm_min, instant.tm_sec);
+    sleep(1);
+    system ("clear");
+
+    }
+    return 0;
+
+}
