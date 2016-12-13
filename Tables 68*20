@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void afficherTableau(int* tableau1);
+int main(void)
+{
+  	int* tableau1 = malloc(sizeof(int)*68*20);
+	FILE* fichier = fopen("image1(2)","r+");
+	char c = 0;
+int i=0;
+int cpt = 0;
+	while ( cpt < 2) {
+		c= fgetc(fichier);
+		if (c == '\n')
+			cpt++;	
+	}
+
+
+	do {
+		c= fgetc(fichier);
+		if(c == '0' || c == '1') {
+			tableau1[i++] = c;
+		}
+	}while(c != EOF);
+
+    	afficherTableau(tableau1);
+	free(tableau1);
+	return EXIT_SUCCESS; /* Equivalent à return 0 sous Windows, permet un code portable */
+}
+
+void afficherTableau(int* tableau1)
+{
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < 20; i++) {
+    	for(j = 0; j < 68; j++) {
+            printf("Tableau1[%d][%d] = %c\n", i, j, tableau1[i*68+j]);
+
+
+        }
+    }
+} 
