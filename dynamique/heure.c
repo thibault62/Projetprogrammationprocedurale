@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include </media/groupe-tvp/b919f1b0-9122-4865-a76b-bb6386984916/doc/dynamique/exia.h>//permet la fonction ouverture
+//#include </media/groupe-tvp/b919f1b0-9122-4865-a76b-bb6386984916/doc/dynamique/exia.h>//permet la fonction ouverture
+#include </home/projet-tvp/Images/projet2/exia.h> 
 
 /*initialiser la fct afficherTableau avec comme argument tableau2 qui correspond au tableau qui va etre centré*/
 void afficherTableauH1(int* tableau2);
@@ -10,6 +11,8 @@ void afficherTableauM1(int* tableau2);
 void afficherTableauM2(int* tableau2);
 void afficherTableauS1(int* tableau2);
 void afficherTableauS2(int* tableau2);
+void lirefichier(void);
+void mettredstbl(void);
 
 FILE* ouverture(int temps);
 
@@ -62,12 +65,19 @@ while(1)
 	afficherTableauM2(tableau2);
 	afficherTableauS1(tableau2);
 	afficherTableauS2(tableau2);
+	
+	mettredstbl();
+	
+	lirefichier();
 
+
+	
 
     	system("sleep 3");
     	system ("clear");
 
     }
+fclose(tbl245);
 free(tableau2);
     return 0;
 
