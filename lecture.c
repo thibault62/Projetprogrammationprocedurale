@@ -19,10 +19,12 @@
 	int main(int argc, char *argv[])
 	{int nbrAlea;//nombre aleatoire
 	FILE* history = NULL;
+	FILE* compteur = NULL;
+	int cpt;
 	FILE* alea = NULL;
 	alea=fopen("/home/pierre/Documents/doc/alea","r");
 	nbrAlea=fgetc(alea);
-	printf("-%d-",nbrAlea);
+	
 	nbrAlea=nbrAlea-48;
 	fclose(alea);
 	history = fopen("/home/pierre/Documents/doc/history.txt", "a");
@@ -51,22 +53,67 @@
 	/*switch qui permet d'ouvrir une image en fonction d'un nombre aleatoire entre 1 et 5 */
 		switch(nbrAlea)
 		{case 1:
+		/*compteur=fopen("cpt_1","r");
+		cpt=fgetc(compteur);
+		cpt=cpt+1;
+		fclose(compteur);
+		system("rm cpt_1");
+		compteur=fopen("cpt_1","w");
+		fprintf(compteur,"%c",cpt);
+		fclose(compteur);*/
+
 		fichier = fopen("/home/pierre/Documents/doc/statique/image1-2", "r");
 		fprintf(history," je suis en pause\n\n");
 		break;
 		case 2:
+		/*compteur=fopen("cpt_2","r");
+		cpt=fgetc(compteur);
+		cpt=cpt+1;
+		fclose(compteur);
+		system("rm cpt_2");
+		compteur=fopen("cpt_2","w");
+		fprintf(compteur,"%c",cpt);
+		fclose(compteur);*/
+
 		fichier = fopen("/home/pierre/Documents/doc/statique/image2-2", "r");
 		fprintf(history," tetris\n\n");
 		break;
 		case 3:
+		/*compteur=fopen("cpt_3","r");
+		cpt=fgetc(compteur);
+		cpt=cpt+1;
+		fclose(compteur);
+		system("rm cpt_3");
+		compteur=fopen("cpt_3","w");
+		fprintf(compteur,"%c",cpt);
+		fclose(compteur);*/
+
 		fichier = fopen("/home/pierre/Documents/doc/statique/image3-2", "r");
 		fprintf(history," start to continue\n\n");
 		break; 
 		case 4:
+		/*compteur=fopen("cpt_4","r");
+		cpt=fgetc(compteur);
+		cpt=cpt+1;
+		fclose(compteur);
+		system("rm cpt_4");
+		compteur=fopen("cpt_4","w");
+		fprintf(compteur,"%c",cpt);
+		fclose(compteur);*/
+
 		fichier = fopen("/home/pierre/Documents/doc/statique/image4-2", "r");
 		fprintf(history," psychédélique\n\n");
 		break;
 		case 5:
+		/*compteur=fopen("cpt_5","r");
+		cpt=fgetc(compteur);
+		cpt=cpt+1;
+		fclose(compteur);
+		system("rm cpt_5");
+		compteur=fopen("cpt_5","w");
+		fprintf(compteur,"%c",cpt);
+		fclose(compteur);*/
+
 		fichier = fopen("/home/pierre/Documents/doc/statique/image5-2", "r");
 		fprintf(history," exia\n\n");
 		break;
