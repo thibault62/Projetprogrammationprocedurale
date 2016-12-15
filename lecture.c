@@ -53,7 +53,8 @@
 	/*switch qui permet d'ouvrir une image en fonction d'un nombre aleatoire entre 1 et 5 */
 		switch(nbrAlea)
 		{case 1:
-		/*compteur=fopen("cpt_1","r");
+		//ces blocs sont sensé recuperer une variable dans un fichier 
+		 /*compteur=fopen("cpt_1","r");
 		cpt=fgetc(compteur);
 		cpt=cpt+1;
 		fclose(compteur);
@@ -61,6 +62,7 @@
 		compteur=fopen("cpt_1","w");
 		fprintf(compteur,"%c",cpt);
 		fclose(compteur);*/
+		 
 
 		fichier = fopen("/home/pierre/Documents/doc/statique/image1-2", "r");
 		fprintf(history," je suis en pause\n\n");
