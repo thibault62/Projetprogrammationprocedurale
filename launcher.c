@@ -3,7 +3,7 @@
 	#include <unistd.h>
 	#include <sys/wait.h>
 	#include <time.h>
-
+/*pour les stats nous voulions utiliser des variables qui puissent communiquer entre les programmes au debut nous vouliosn utiliser les variables d environement mais on a pas reussi a les modifier au sein d un programme , nous avons donc decider de stocker ces variables dans des .txt pour les reutiliser aprés cependnat cela ne fonctionne pas lors de lexecution du launcher*/
 		int Random (int _imin, int _imax)
 		{return (_imin + (rand () % (_imax-_imin+1)));}
 
@@ -15,7 +15,7 @@ int main(int argv, char *argc){
 	int car;
 	FILE* nbr_utilisation = NULL;
 	FILE* nbr_utilisation2 = NULL;
-	FILE* nbr_1 = NULL;
+	FILE* nbr_1 = NULL;//permet de stocker dans des txt le nombre de lancement des differenst fond ecrans cf point sur les stats au debut du programme
 	FILE* nbr_12 = NULL;
 	FILE* nbr_2 = NULL;
 	FILE* nbr_22 = NULL;
