@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <unistd.h>
 
 int main(void)
 
 {
+FILE* history = NULL;
+history = fopen("/home/pierre/Documents/doc/history.txt", "a");
+//fprintf(history,"date :");
+system("echo $(date +%D) >> /home/pierre/Documents/doc/history.txt");
+system("gcc -o heure /home/pierre/Documents/doc/heure.c;./heure");
+fprintf(history," dynamique \n-----------\n");
+fclose(history);
+
 system("clear");
 FILE* heure=NULL;
 heure=fopen("heure","w");
@@ -38,7 +46,7 @@ int l=0;
 h=instant.tm_hour;
 m=instant.tm_min;
 s=instant.tm_sec;
-switch (random)
+/*switch (random)
 {	
 	case 0 :
 		{
@@ -55,7 +63,7 @@ switch (random)
 		break;	
 		}
 	
-}
+}*/
 while (j<10)
 	{
 	printf("\n");
@@ -89,7 +97,7 @@ fprintf(heure,"%d",s1);
 	}
 printf("%d\n",s);
 fprintf(heure,"%d\n",s);
-system("XTrem*faceSize:10");
+//system("XTrem*faceSize:10");
 while (l<10)
 	{
 	printf("\n");
@@ -109,6 +117,7 @@ while (i<10)
 	sleep(1);
 	i++;
 	}
+sleep(1);
 system("clear");
 }
     return 0;
