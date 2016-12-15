@@ -7,7 +7,7 @@ int main(void)
 
 {
 FILE* history = NULL;
-history = fopen("/home/pierre/Documents/doc/history.txt", "a");
+history = fopen("/home/pierre/Documents/doc/history.txt", "a");//ouverture du fichier d historique permettant par la suite de noter le type de fond d ecran dans l historique
 //fprintf(history,"date :");
 system("echo $(date +%D) >> /home/pierre/Documents/doc/history.txt");
 system("gcc -o heure /home/pierre/Documents/doc/heure.c;./heure");
@@ -17,7 +17,8 @@ fclose(history);
 system("clear");
 FILE* heure=NULL;
 heure=fopen("heure","w");
-srand(time(NULL));
+srand(time(NULL));//element creant un nombre aleatoire pour la taille des caracteres meme si normalement ce sont les variables d'environements qui doivent gerer cette taille mais nous souhaitions changer cette regle pour permettre une modification de la taille des images quand meme
+/*cette idée a été abandonné par la suite car nous souhaitions modifier la taille de l affichage de l heure dans un terminal Xterm or nous n avons pas reussi car nous manquions de temps  */
 int random=0;
 random = (rand() % (0,3 ));
 
@@ -46,7 +47,7 @@ int l=0;
 h=instant.tm_hour;
 m=instant.tm_min;
 s=instant.tm_sec;
-/*switch (random)
+/*switch (random)//cette commande permet de changer la taille du texte du terminal en ayant fais au prealable les modifications dans le fichier .Xconfig
 {	
 	case 0 :
 		{
